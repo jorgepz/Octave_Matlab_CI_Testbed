@@ -1,6 +1,13 @@
-function mySimpleTest1
-   a = 1;
-   a = a + 1
-   error('this is a test error')
-   fprintf('sum done.')
-end
+function test_suite = mySimpleTest1
+% initialize unit tets
+    try
+        test_functions=localfunctions();
+    catch
+    end
+    initTestSuite;
+
+function test_1
+    assertEqual(1,1);
+
+function test_2
+    assertEqual(2,2);
