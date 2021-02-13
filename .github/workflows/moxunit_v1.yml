@@ -26,10 +26,10 @@ jobs:
       - uses: joergbrech/moxunit-action@v1
         with:
           test_directory: .
-      - run: octave
-      - run: octave mySimpleTest1.m
-      - run: mySimpleTest1.m
-      - run: tests
+          shell: octave
+      - run: mySimpleTest1
+      #- run: octave mySimpleTest1.m
+      #- run: tests
       #- name: Run a simple function
       #  run: 
       #    mySimpleTest1.m
