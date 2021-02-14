@@ -28,3 +28,10 @@ jobs:
       - uses: joergbrech/moxunit-action@v1
         with:
           test_directory: ./testFolder/mySimpleTest2.m
+  tests1-with-test-keyword:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: joergbrech/moxunit-action@v1
+        with:
+          tests: mySimpleTest1.m
