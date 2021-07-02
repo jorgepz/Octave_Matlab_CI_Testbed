@@ -13,19 +13,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  tests1:
+  tests1-with-coverage:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout repo
+        uses: actions/checkout@v2
       - uses: joergbrech/moxunit-action@master
         with:
           tests: mySimpleTest1.m
-          cover_xml_file: coverage.xml
           with_coverage: true
-      - uses: codecov/codecov-action@v1
+  tests1-with-coverage-html:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - uses: joergbrech/moxunit-action@master
         with:
-          file: ./coverage.xml
+          tests: mySimpleTest1.m
+          cover_html_dir: htmlcov
+      - uses: actions/upload-artifact@v1
+        with:
+          name: coverage_html
+          path: htmlcov
   tests2:
     runs-on: ubuntu-latest
     steps:
