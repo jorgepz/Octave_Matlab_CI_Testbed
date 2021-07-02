@@ -22,7 +22,6 @@ jobs:
         with:
           tests: mySimpleTest1.m
           with_coverage: true
-          doc_tests: true
           cover_xml_file: coverage.xml
       - uses: codecov/codecov-action@v1
         with:
