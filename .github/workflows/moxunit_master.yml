@@ -21,6 +21,12 @@ jobs:
       - uses: joergbrech/moxunit-action@master
         with:
           tests: mySimpleTest1.m
+          with_coverage: true
+          doc_tests: true
+          cover_xml_file: coverage.xml
+      - uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage.xml
   tests2:
     runs-on: ubuntu-latest
     steps:
