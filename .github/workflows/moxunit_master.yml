@@ -19,7 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: joergbrech/moxunit-action@master
-      - uses: ./
         with:
           src: ./
           tests: mySimpleTest1.m
