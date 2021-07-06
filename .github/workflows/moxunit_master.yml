@@ -21,7 +21,7 @@ jobs:
     - name: Run unit tests
       uses: joergbrech/moxunit-action@master
       with:
-        src: tests/src
+        src: tests/src,tests/srcB
         with_coverage: true
   test-cover-xml-file:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
     - name: Run unit tests
       uses: joergbrech/moxunit-action@master
       with:
-        src: tests/src
+        src: tests/src,tests/srcB
         cover_xml_file: coverage.xml
     - uses: actions/upload-artifact@v1
       with:
