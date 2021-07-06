@@ -13,34 +13,33 @@ on:
   workflow_dispatch:
 
 jobs:
-  tests1-with-coverage:
-    # The type of runner that the job will run on
+  test-with-coverage:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@master
-        with:
-          src: testFolder/
-          with_coverage: true
-          cover_xml_file: coverage.xml
-      - uses: codecov/codecov-action@v1
-        with:
-          file:  coverage.xml # optional
-  tests1-with-coverage-html:
-    # The type of runner that the job will run on
+    - name: Checkout repo
+      uses: actions/checkout@v2
+    - name: Run unit tests
+      uses: joergbrech/moxunit-action@master
+      with:
+        src: tests/src
+        with_coverage: true
+  test-cover-xml-file:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@master
-        with:
-          tests: mySimpleTest1.m
-          cover_html_dir: htmlcov
-      - uses: actions/upload-artifact@v1
-        with:
-          name: coverage_html
-          path: htmlcov
+    - name: Checkout repo
+      uses: actions/checkout@v2
+    - name: Run unit tests
+      uses: joergbrech/moxunit-action@master
+      with:
+        src: tests/src
+        cover_xml_file: coverage.xml
+    - uses: actions/upload-artifact@v1
+      with:
+        name: coverage_file
+        path: coverage.xml
+    - uses: codecov/codecov-action@v1
+      with:
+        file: ./coverage.xml
   tests2:
     runs-on: ubuntu-latest
     steps:
