@@ -7,7 +7,8 @@ function test_suite = mySimpleTest1
     initTestSuite;
 
 function test_1
-    assertEqual(1,1);
+    testValue = auxiliarFunction(2);
+    assertEqual( testValue, 1 );
 
 
 function test_2
