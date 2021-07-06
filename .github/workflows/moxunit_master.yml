@@ -23,22 +23,10 @@ jobs:
         with:
           tests: mySimpleTest1.m
           with_coverage: true
-  tests1-with-xml:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repo
-        uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@master
-        with:
-          tests: mySimpleTest1.m
           cover_xml_file: coverage.xml
-      - uses: actions/upload-artifact@v1
-        with:
-          name: coverage_file
-          path: coverage.xml
       - uses: codecov/codecov-action@v1
         with:
-          file: ./coverage.xml
+          file:  coverage.xml # optional
   tests1-with-coverage-html:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
