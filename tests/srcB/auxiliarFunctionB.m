@@ -1,3 +1,8 @@
 
 function testValue = auxiliarFunctionB(x);
-testValue = x^2 ;
+
+if x > 0
+   testValue = 0 ;
+else
+  testValue = x^2 ;
+end
