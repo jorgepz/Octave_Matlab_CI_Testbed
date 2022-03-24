@@ -1,0 +1,13 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = "docsy"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "documentation"
+    name = "Documentation"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/documentation/"
+    weight = 20
