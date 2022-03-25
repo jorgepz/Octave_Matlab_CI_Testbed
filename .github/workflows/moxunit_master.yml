@@ -24,27 +24,16 @@ jobs:
   test-with-coverage:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-    - name: Run unit tests
-      uses: joergbrech/moxunit-action@master
-      with:
-        src: tests/src tests/srcB
-        with_coverage: true
-  test-cover-xml-file:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-    - name: Run unit tests
-      uses: joergbrech/moxunit-action@master
-      with:
-        src: tests/src  tests/srcB
-        cover_xml_file: coverage.xml
-    - uses: actions/upload-artifact@v1
-      with:
-        name: coverage_file
-        path: coverage.xml
-    - uses: codecov/codecov-action@v1
-      with:
-        file: ./coverage.xml
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Run unit tests
+        uses: joergbrech/moxunit-action@master
+        with:
+          tests: ./mySimpleTest1.m
+          src: tests/src tests/srcB
+          with_coverage: true
+          cover_xml_file: coverage.xml
+      - uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage.xml
+          
