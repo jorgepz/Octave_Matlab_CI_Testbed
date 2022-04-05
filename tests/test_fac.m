@@ -21,18 +21,3 @@ function test_fac_1
 function test_fac_5
 % test if fac(5)==120
     assertEqual(fac(5),120);
-
-function test_fac_6
-  assertEqual(auxiliarFunctionB(2),4);
-
-%%%%%%%%%%%%%%%%%%%%%%%
-% More advanced tests %
-%%%%%%%%%%%%%%%%%%%%%%%
-
-function test_fac_exception_negative
-% test if exceptions are thrown for negative values
-    assertExceptionThrown(@()fac(-1));
-
-function test_fac_exception_noninteger
-% test if exceptions are thrown for noninteger values
-    assertExceptionThrown(@()fac(1.5),'*');
