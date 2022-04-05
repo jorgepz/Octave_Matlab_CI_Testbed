@@ -13,30 +13,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  mySimpleTest1:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@master
-        with:
-          src: tests/src tests/srcB
-          tests: ./mySimpleTest1.m
-  test-with-coverage:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-      - name: Run unit tests
-        uses: joergbrech/moxunit-action@master
-        with:
-          tests: ./mySimpleTest1.m
-          src: tests/src tests/srcB
-          with_coverage: true
-          cover_xml_file: coverage.xml
-      - uses: codecov/codecov-action@v1
-        with:
-          file: ./coverage.xml
-
   matlab-codecov:
     runs-on: ubuntu-latest
     steps:
@@ -44,7 +20,6 @@ jobs:
       - uses: matlab-actions/setup-matlab@v0
       - uses: matlab-actions/run-tests@v0
         with:
-          tests: ./mySimpleTest1.m
           source-folder: tests/src tests/srcB
           code-coverage-cobertura: coverage.xml
       - uses: codecov/codecov-action@v1
