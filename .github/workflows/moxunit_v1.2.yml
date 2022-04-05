@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@v1.2
+      - uses: joergbrech/moxunit-action@v1.2.0
         with:
           tests: mySimpleTest1.m
   tests2:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@v1.2
+      - uses: joergbrech/moxunit-action@v1.2.0
         with:
           tests: ./testFolder/mySimpleTest2.m
