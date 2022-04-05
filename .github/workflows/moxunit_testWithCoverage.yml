@@ -13,7 +13,7 @@ jobs:
       - uses: joergbrech/moxunit-action@v1.2.0
         with:
           tests: tests/test_fac.m
-          src: tests/src tests/ext1
+          src: src tests/src tests/ext1
           with_coverage: true
           cover_xml_file: coverage.xml
       - uses: codecov/codecov-action@v1
