@@ -5,7 +5,7 @@ name: moxunit_testWithCoverage
 on: [push, pull_request]
 
 jobs:
-  tests1:
+  tests_fac:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
