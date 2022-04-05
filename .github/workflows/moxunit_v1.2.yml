@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
-name: moxunit_v1.1_test
+name: moxunit_v1.2_test
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@v1.1
+      - uses: joergbrech/moxunit-action@v1.2
         with:
           tests: mySimpleTest1.m
   tests2:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@v1.1
+      - uses: joergbrech/moxunit-action@v1.2
         with:
           tests: ./testFolder/mySimpleTest2.m

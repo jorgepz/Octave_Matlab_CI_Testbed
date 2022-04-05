@@ -10,6 +10,5 @@ function test_1
     testValue = auxiliarFunction(2);
     assertEqual( testValue, 1 );
 
-
 function test_2
     assertEqual(2,2);
