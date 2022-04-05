@@ -21,3 +21,7 @@ function test_fac_1
 function test_fac_5
 % test if fac(5)==120
     assertEqual(fac(5),120);
+
+function dummy_2
+    assertEqual( dummy_fun_2(2) , 4 );
+
