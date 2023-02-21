@@ -1,4 +1,4 @@
-function test_suite=test_fac
+function test_suite=test_coverage
   % initialize unit tets
   try
     test_functions=localfunctions()
@@ -18,6 +18,8 @@ function test_3
   assertEqual( dummy_fun_2(2) , 4 );
 
 function test_4
+  cd('folderB')
   someCalc
+  four
   assertEqual( four, 4 );
 
