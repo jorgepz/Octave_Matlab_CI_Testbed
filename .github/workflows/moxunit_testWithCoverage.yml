@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@v1.1
+      - uses: joergbrech/moxunit-action@v1.2.0
         with:
           src: .
           tests: test/test_coverage.m
