@@ -1,3 +1,5 @@
+clear all, close all,
+
 four = 2+2
 
 if four == 3
