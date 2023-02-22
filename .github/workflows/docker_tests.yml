@@ -1,0 +1,13 @@
+name: octave_tests
+
+on: push 
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    container: gnuoctave/octave:latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          cd test
+          octave --eval "test_local"
