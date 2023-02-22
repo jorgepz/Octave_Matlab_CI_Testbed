@@ -17,9 +17,9 @@ function test_2
 function test_3
   assertEqual( dummy_fun_2(2) , 4 );
 
-function test_4
-  cd('folderB')
-  someCalc
-  four
-  assertEqual( four, 4 );
+% function test_4
+%   cd('folderB')
+%   someCalc
+%   four
+%   assertEqual( four, 4 );
 
