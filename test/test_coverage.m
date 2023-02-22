@@ -18,8 +18,11 @@ function test_3
   assertEqual( dummy_fun_2(2) , 4 );
 
 function test_4
-  % cd('folderB')
+  addpath('folderB')
   someCalc
-  four
-  assertEqual( four, 4 );
+  assertEqual( value, 4 );
 
+function test_5
+  addpath('folderB')
+  anotherCalc
+  assertEqual( value, 9 );
