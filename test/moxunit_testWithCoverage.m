@@ -7,11 +7,11 @@ function test_suite=moxunit_testWithCoverage
   initTestSuite;
 
 function test_1
-  addpath(['..' filesep 'examples'])  
+  addpath([ 'examples'])  
   exampleA
   assertEqual(result,4);
 
 function test_2
-  addpath(['..' filesep 'examples'])  
+  addpath([ 'examples'])  
   exampleB
   assertEqual(result,2);
