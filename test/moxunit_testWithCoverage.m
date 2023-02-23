@@ -12,6 +12,10 @@ function test_1
   assertEqual(result,4);
 
 function test_2
-  addpath([ 'examples'])  
+  cd('examples')  
   exampleB
   assertEqual(result,2);
+
+function test_3
+  run('examples/exampleC.m')
+  assertEqual(result,27);
