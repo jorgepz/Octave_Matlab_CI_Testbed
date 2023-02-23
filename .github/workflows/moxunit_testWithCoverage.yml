@@ -13,10 +13,24 @@ jobs:
       - uses: joergbrech/moxunit-action@v1.3.0
         with:
           src: .
-          tests: moxunit_testWithCoverage.m
+          tests: ./test/moxunit_testWithCoverage.m
           with_coverage: true
           cover_xml_file: coverage.xml
-          working_directory: test
       - uses: codecov/codecov-action@v3
         with:
-          file: ./test/coverage.xml
+          file: ./coverage.xml
+  # coverage_test:
+  #   # The type of runner that the job will run on
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: joergbrech/moxunit-action@v1.3.0
+  #       with:
+  #         src: .
+  #         tests: moxunit_testWithCoverage.m
+  #         with_coverage: true
+  #         cover_xml_file: coverage.xml
+  #         working_directory: test
+  #     - uses: codecov/codecov-action@v3
+  #       with:
+  #         file: ./test/coverage.xml
