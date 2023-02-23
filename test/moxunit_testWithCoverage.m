@@ -17,5 +17,6 @@ function test_suite=moxunit_testWithCoverage
 %   assertEqual(result,2);
 
 function test_3 % running from here
-  run(['..' filesep 'examples'  filesep 'exampleC.m'])
+  %run(['..' filesep 'examples'  filesep 'exampleC.m'])
+  exampleC
   assertEqual(result,27);
