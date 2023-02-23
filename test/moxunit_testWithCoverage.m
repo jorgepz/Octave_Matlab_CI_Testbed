@@ -11,7 +11,7 @@ function test_1
    assertEqual(result,4);
 
 function test_2
-  addpath([ pwd filesep 'examples']);
+  %addpath([ pwd filesep 'examples']);
   exampleB
   assertEqual(result,2);
 
