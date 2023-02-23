@@ -5,7 +5,7 @@ name: moxunit_testCoverage
 on: [push, pull_request]
 
 jobs:
-  tests_fac:
+  coverage_test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
@@ -13,7 +13,7 @@ jobs:
       - uses: joergbrech/moxunit-action@v1.3.0
         with:
           src: .
-          tests: test/test_coverage.m
+          tests: test/moxunit_testWithCoverage.m
           with_coverage: true
           cover_xml_file: coverage.xml
       - uses: codecov/codecov-action@v3

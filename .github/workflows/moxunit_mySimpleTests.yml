@@ -5,18 +5,11 @@ name: moxunit_mySimpleTests
 on: [push, pull_request]
 
 jobs:
-  tests1:
+  simple_test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@v1.2.0
+      - uses: joergbrech/moxunit-action@v1.3.0
         with:
           tests: mySimpleTest1.m
-  tests2:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: joergbrech/moxunit-action@v1.2.0
-        with:
-          tests: ./folderA/mySimpleTest2.m
