@@ -6,14 +6,15 @@ function test_suite=moxunit_testWithCoverage
   end
   initTestSuite;
 
-function test_1 % adding folder to path
+function test_1
    exampleA
    assertEqual(result,4);
 
-function test_2 % moving to folder
+function test_2
+  addpath([ pwd filesep 'examples']);
   exampleB
   assertEqual(result,2);
 
-function test_3 % running from here
+function test_3
   exampleC
   assertEqual(result,27);
