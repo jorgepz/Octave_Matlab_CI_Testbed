@@ -1,59 +1,31 @@
-name: octave_tests
+name: octave_docker_tests
 
 on: push 
 
 jobs:
-  test1:
+  test1-HWmtmiller:
     runs-on: ubuntu-latest
     container: mtmiller/octave
     steps:
       - uses: actions/checkout@v3
       - run: octave --eval "run('HelloWorld/helloworld.m')" 
+             octave --eval "version"
 
-  test2:
-    runs-on: ubuntu-latest
-    container: matpower/octave
-    steps:
-      - uses: actions/checkout@v3
-      - run: octave --eval "run('HelloWorld/helloworld.m')" 
-
-  test3:
-    runs-on: ubuntu-latest
-    container: matpower/octave
-    steps:
-      - uses: actions/checkout@v3
-      - run: |
-          git clone https://github.com/ONSAS/ONSAS.m.git
-          cd ONSAS.m/test
-          octave --eval "runTestProblems_local"
-
-  test4:
-    runs-on: ubuntu-latest
-    container: matpower/octave
-    steps:
-      - uses: actions/checkout@v3
-      - run: |
-          git clone https://github.com/ONSAS/ONSAS.m.git
-          cd ONSAS.m/test
-          octave --eval "runTestProblems_local"
-          octave --eval "version"
-  test5:
+  test2-HWoctavelatest:
     runs-on: ubuntu-latest
     container: gnuoctave/octave:latest
     steps:
       - uses: actions/checkout@v3
-      - run: |
-          git clone https://github.com/ONSAS/ONSAS.m.git
-          cd ONSAS.m/test
-          octave --eval "runTestProblems_local"
-          octave --eval "version"
-  test6:
+      - run: octave --eval "run('HelloWorld/helloworld.m')" 
+             octave --eval "version"
+
+  test3-matpowerAndClonerepo:
     runs-on: ubuntu-latest
-    container: qmrlab/octaveci:latest
+    container: matpower/octave
     steps:
       - uses: actions/checkout@v3
       - run: |
-          git clone https://github.com/ONSAS/ONSAS.m.git
-          cd ONSAS.m/test
-          octave --eval "runTestProblems_local"
+          git clone https://github.com/ONSAS/ONSAS.git
+          cd ONSAS/examples/staticVonMisesTruss
+          octave --eval "staticVonMisesTruss; assert(verifBoolean,true)"
           octave --eval "version"
