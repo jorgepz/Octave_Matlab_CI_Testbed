@@ -8,16 +8,18 @@ jobs:
     container: mtmiller/octave
     steps:
       - uses: actions/checkout@v3
-      - run: octave --eval "run('HelloWorld/helloworld.m')" 
-             octave --eval "version"
+      - run: |
+          octave --eval "run('HelloWorld/helloworld.m')" 
+          octave --eval "version"
 
   test2-HWoctavelatest:
     runs-on: ubuntu-latest
     container: gnuoctave/octave:latest
     steps:
       - uses: actions/checkout@v3
-      - run: octave --eval "run('HelloWorld/helloworld.m')" 
-             octave --eval "version"
+      - run:  |
+          octave --eval "run('HelloWorld/helloworld.m')" 
+          octave --eval "version"
 
   test3-matpowerAndClonerepo:
     runs-on: ubuntu-latest
