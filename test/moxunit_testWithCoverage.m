@@ -18,3 +18,8 @@ function test_2
 function test_3
   exampleC
   assertEqual(result,27);
+
+function test_4
+  exampleD
+  assertEqual(val,'red');
+  
