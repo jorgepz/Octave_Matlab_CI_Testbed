@@ -8,8 +8,8 @@ jobs:
     container: mtmiller/octave
     steps:
       - uses: actions/checkout@v3
-      - run: cd HelloWorld && ./HelloWorld
       - name: Build docker images
         run: docker build -t local < .devcontainer/Dockerfile
       - name: Run tests
         run: docker run -it -v $PWD:/srv -w/srv local echo "hola"
+      - run: cd HelloWorld && ./HelloWorld
