@@ -1,0 +1,33 @@
+name: octave_docker_tests
+
+on: push 
+
+jobs:
+  test1-HWmtmiller:
+    runs-on: ubuntu-latest
+    container: mtmiller/octave
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          octave --eval "run('HelloWorld/helloworld.m')" 
+          octave --eval "version"
+
+  test2-HWoctavelatest:
+    runs-on: ubuntu-latest
+    container: gnuoctave/octave:latest
+    steps:
+      - uses: actions/checkout@v3
+      - run:  |
+          octave --eval "run('HelloWorld/helloworld.m')" 
+          octave --eval "version"
+
+  test3-matpowerAndClonerepo:
+    runs-on: ubuntu-latest
+    container: matpower/octave
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git clone https://github.com/ONSAS/ONSAS.git
+          cd ONSAS/examples/staticVonMisesTruss
+          octave --eval "staticVonMisesTruss; assert(verifBoolean,true)"
+          octave --eval "version"
