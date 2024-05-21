@@ -1,0 +1,11 @@
+name: cpp_docker_tests
+
+on: push 
+
+jobs:
+  cpp-helloworld:
+    runs-on: ubuntu-latest
+    container: mtmiller/octave
+    steps:
+      - uses: actions/checkout@v3
+      - run: ./HelloWorld
