@@ -21,5 +21,5 @@ function test_3
 
 function test_4
   exampleD
-  assertEqual(val,'red');
+  assertEqual(vala,valb);
   

@@ -3,4 +3,7 @@ addpath(genpath([pwd filesep '..' filesep  'src'] ));
 
 a=example_class();
 
-val = get_val(a);
+b=example_class(a);
+
+vala = get_val(a);
+valb = get_val(b);
