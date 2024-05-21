@@ -1,0 +1,59 @@
+name: octave_tests
+
+on: push 
+
+jobs:
+  test1:
+    runs-on: ubuntu-latest
+    container: mtmiller/octave
+    steps:
+      - uses: actions/checkout@v3
+      - run: octave --eval "run('HelloWorld/helloworld.m')" 
+
+  test2:
+    runs-on: ubuntu-latest
+    container: matpower/octave
+    steps:
+      - uses: actions/checkout@v3
+      - run: octave --eval "run('HelloWorld/helloworld.m')" 
+
+  test3:
+    runs-on: ubuntu-latest
+    container: matpower/octave
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git clone https://github.com/ONSAS/ONSAS.m.git
+          cd ONSAS.m/test
+          octave --eval "runTestProblems_local"
+
+  test4:
+    runs-on: ubuntu-latest
+    container: matpower/octave
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git clone https://github.com/ONSAS/ONSAS.m.git
+          cd ONSAS.m/test
+          octave --eval "runTestProblems_local"
+          octave --eval "version"
+  test5:
+    runs-on: ubuntu-latest
+    container: gnuoctave/octave:latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git clone https://github.com/ONSAS/ONSAS.m.git
+          cd ONSAS.m/test
+          octave --eval "runTestProblems_local"
+          octave --eval "version"
+  test6:
+    runs-on: ubuntu-latest
+    container: qmrlab/octaveci:latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git clone https://github.com/ONSAS/ONSAS.m.git
+          cd ONSAS.m/test
+          octave --eval "runTestProblems_local"
+          octave --eval "version"
