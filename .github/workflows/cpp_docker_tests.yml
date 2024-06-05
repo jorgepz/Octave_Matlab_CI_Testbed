@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
       #- uses: docker/setup-buildx-action@v3
       - name: Build docker images
-        run: docker build .
+        run: docker build -t my_image .
       # - name: Run tests
       #   run: docker run -it -v $PWD:/srv -w/srv local echo "hola"
       # - run: cd HelloWorld && ./HelloWorld
