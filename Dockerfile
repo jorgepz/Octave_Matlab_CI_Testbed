@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y \
 	libopenblas-dev \
 	liblapack-dev \
 	libarpack2 \
-	libarmadillo-dev
-	&& rm -rf /var/lib/apt/lists/*
+	libarmadillo-dev \
+	rm -rf /var/lib/apt/lists/*
 
 # HelloWorld tests
 # COPY HelloWorld /HelloWorld
