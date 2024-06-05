@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 	liblapack-dev \
 	libarpack2 \
 	libarmadillo-dev \
-	rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/*
 
 # HelloWorld tests
 COPY HelloWorld /HelloWorld
