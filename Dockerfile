@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-COPY entrypoint.sh /entrypoint.sh
+# COPY entrypoint.sh /entrypoint.sh
 
 # ENTRYPOINT ["/entrypoint.sh"]
 
@@ -16,12 +16,11 @@ RUN apt-get update && apt-get install -y \
 	rm -rf /var/lib/apt/lists/*
 
 # HelloWorld tests
-# COPY HelloWorld /HelloWorld
-# WORKDIR /HelloWorld/
-# RUN g++ -o HelloWorld helloworld.cpp
-# CMD ["./HelloWorld"]
-# CMD ["octave --eval helloworld"]
-
+COPY HelloWorld /HelloWorld
+WORKDIR /HelloWorld/
+RUN g++ -o HelloWorld helloworld.cpp
+CMD ["./HelloWorld"]
+CMD ["octave --eval helloworld"]
 
 # # Armadillo test
 # COPY ArmadilloTest /ArmadilloTest
