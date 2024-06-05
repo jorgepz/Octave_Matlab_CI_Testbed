@@ -12,5 +12,5 @@ jobs:
         run: docker build -t my_image .
       # - name: Run tests
       #   run: docker run -it -v $PWD:/srv -w/srv local echo "hola"
-      # - run: cd HelloWorld && ./HelloWorld
-      #   run: docker build --file ./Dockerfile --tag my-image-name:$(date +%s)
+      - uses: my_image
+        run: cd HelloWorld && ./HelloWorld
