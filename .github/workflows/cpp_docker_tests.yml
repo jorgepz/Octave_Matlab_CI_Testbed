@@ -10,7 +10,7 @@ jobs:
       #- uses: docker/setup-buildx-action@v3
       - name: Build docker images
         run: docker build .
-      - name: Run tests
-        run: docker run -it -v $PWD:/srv -w/srv local echo "hola"
+      # - name: Run tests
+      #   run: docker run -it -v $PWD:/srv -w/srv local echo "hola"
       # - run: cd HelloWorld && ./HelloWorld
       #   run: docker build --file ./Dockerfile --tag my-image-name:$(date +%s)

@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-# COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 # ENTRYPOINT ["/entrypoint.sh"]
 
@@ -8,13 +8,12 @@ RUN apt-get update && apt-get install -y \
 	git \
     octave \
 	build-essential \
+    cmake \
+	libopenblas-dev \
+	liblapack-dev \
+	libarpack2 \
+	libarmadillo-dev
 	&& rm -rf /var/lib/apt/lists/*
-	# cmake \
-	# \
-    # libopenblas-dev \
-	# liblapack-dev \
-	# libarpack2 \
-	# libarmadillo-dev
 
 # HelloWorld tests
 # COPY HelloWorld /HelloWorld
