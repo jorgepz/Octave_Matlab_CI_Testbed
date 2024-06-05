@@ -16,5 +16,5 @@ jobs:
       #   run: docker exec my-container ./build-my-application      
       # - name: Run tests
       #   run: docker run -it -v $PWD:/srv -w/srv local echo "hola"
-      #- uses: my_image
-      #  run: cd HelloWorld && ./HelloWorld
+      # - uses: my-docker-image
+      #   run: cd HelloWorld && ./HelloWorld
