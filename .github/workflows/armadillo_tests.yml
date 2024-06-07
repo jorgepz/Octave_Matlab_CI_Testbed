@@ -11,7 +11,7 @@ jobs:
         run: |
           apt-get update && apt-get install -y \
           git build-essential cmake	libopenblas-dev \
-        	liblapack-dev libarpack2 libarmadillo-dev \
+        	liblapack-dev libarpack2 libarmadillo-dev
       - name: compile hello world
         run: |
           cd HelloWorld && g++ -o HelloWorld && ./HelloWorld
