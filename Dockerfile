@@ -20,13 +20,12 @@ COPY HelloWorld /HelloWorld
 WORKDIR /HelloWorld/
 RUN g++ -o HelloWorld helloworld.cpp
 CMD ["./HelloWorld"]
-CMD ["octave --eval helloworld"]
+# CMD ["octave --eval helloworld"]
 
 # # Armadillo test
-# COPY ArmadilloTest /ArmadilloTest
-# WORKDIR ../ArmadilloTest/
-
-# RUN g++ example.cpp -o example.lnx -O2 -larmadillo
-# CMD ["./example.lnx"]
+COPY ArmadilloTest /ArmadilloTest
+WORKDIR ../ArmadilloTest/
+RUN g++ example.cpp -o example.lnx -O2 -larmadillo
+CMD ["./example.lnx"]
 
 
