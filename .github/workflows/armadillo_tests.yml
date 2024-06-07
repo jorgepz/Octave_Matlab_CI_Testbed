@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build docker images
         run: sudo apt-get update && sudo apt-get install build-essential cmake libopenblas-dev liblapack-dev libarpack2 libarmadillo-dev
-      - name: compile hello world
+      - name: compile armadillo example
         run: |
-          cd HelloWorld && g++ -o HelloWorld helloworld.cpp && ./HelloWorld
+          cd ArmadilloTest && g++ example.cpp -o example.lnx -O2 -larmadillo
