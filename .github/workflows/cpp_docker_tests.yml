@@ -3,7 +3,7 @@ name: cpp_docker_tests
 on: push 
 
 jobs:
-  cpp-helloworld:
+  cpp-armadillo:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
