@@ -8,10 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build docker images
-        run: |
-          apt-get update && apt-get install -y \
-          git build-essential cmake	libopenblas-dev \
-        	liblapack-dev libarpack2 libarmadillo-dev
+        run: sudo apt-get update
       - name: compile hello world
         run: |
           cd HelloWorld && g++ -o HelloWorld && ./HelloWorld
